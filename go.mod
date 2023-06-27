@@ -4,8 +4,11 @@ go 1.19
 
 require (
 	github.com/projectdiscovery/chaos-client v0.5.1
+	github.com/projectdiscovery/dnsx v1.1.4
 	github.com/projectdiscovery/goflags v0.1.10
+	github.com/projectdiscovery/gologger v1.1.10
 	github.com/projectdiscovery/httpx v1.3.3
+	github.com/projectdiscovery/katana v1.0.2
 	github.com/projectdiscovery/naabu/v2 v2.1.6
 	github.com/projectdiscovery/tlsx v1.1.0
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.5.0
@@ -99,6 +102,7 @@ require (
 	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
 	github.com/lufia/plan9stats v0.0.0-20211012122336-39d0f177ccd0 // indirect
+	github.com/lukasbob/srcset v0.0.0-20190730101422-86b742e617f3 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/mattn/go-runewidth v0.0.14 // indirect
@@ -127,13 +131,11 @@ require (
 	github.com/projectdiscovery/blackrock v0.0.1 // indirect
 	github.com/projectdiscovery/cdncheck v1.0.9 // indirect
 	github.com/projectdiscovery/clistats v0.0.18 // indirect
-	github.com/projectdiscovery/dnsx v1.1.4 // indirect
 	github.com/projectdiscovery/dsl v0.0.10 // indirect
 	github.com/projectdiscovery/fastdialer v0.0.31 // indirect
 	github.com/projectdiscovery/fdmax v0.0.4 // indirect
 	github.com/projectdiscovery/freeport v0.0.5 // indirect
 	github.com/projectdiscovery/goconfig v0.0.1 // indirect
-	github.com/projectdiscovery/gologger v1.1.10 // indirect
 	github.com/projectdiscovery/hmap v0.0.13 // indirect
 	github.com/projectdiscovery/ipranger v0.0.6 // indirect
 	github.com/projectdiscovery/mapcidr v1.1.2 // indirect

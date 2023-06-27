@@ -16,11 +16,12 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			Schema:      ConfigSchema,
 		},
 		TableMap: map[string]*plugin.Table{
-			"projectdiscovery_naabu": tableProjectdiscoveryNaabu(),
-			"projectdiscovery_chaos": tableProjectdiscoveryChaos(),
-			"projectdiscovery_httpx": tableProjectdiscoveryHttpx(),
-			"projectdiscovery_tlsx":  tableProjectdiscoveryTlsx(),
-			"projectdiscovery_dnsx":  tableProjectdiscoveryDnsx(),
+			"projectdiscovery_naabu":  tableProjectdiscoveryNaabu(),
+			"projectdiscovery_chaos":  tableProjectdiscoveryChaos(),
+			"projectdiscovery_httpx":  tableProjectdiscoveryHttpx(),
+			"projectdiscovery_tlsx":   tableProjectdiscoveryTlsx(),
+			"projectdiscovery_dnsx":   tableProjectdiscoveryDnsx(),
+			"projectdiscovery_katana": tableProjectdiscoveryKatana(),
 		},
 	}
 	return p
