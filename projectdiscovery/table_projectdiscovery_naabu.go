@@ -73,3 +73,5 @@ func listNaabuScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 
 	return nil, nil
 }
+
+// TODO: implement a getList to filter on a set of ports instead once I can figure that out

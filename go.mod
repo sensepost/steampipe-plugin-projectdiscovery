@@ -7,6 +7,7 @@ require (
 	github.com/projectdiscovery/goflags v0.1.10
 	github.com/projectdiscovery/httpx v1.3.3
 	github.com/projectdiscovery/naabu/v2 v2.1.6
+	github.com/projectdiscovery/tlsx v1.1.0
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.5.0
 )
 
@@ -141,7 +142,6 @@ require (
 	github.com/projectdiscovery/rawhttp v0.1.15 // indirect
 	github.com/projectdiscovery/retryabledns v1.0.30 // indirect
 	github.com/projectdiscovery/retryablehttp-go v1.0.17 // indirect
-	github.com/projectdiscovery/tlsx v1.1.0 // indirect
 	github.com/projectdiscovery/uncover v1.0.3 // indirect
 	github.com/projectdiscovery/utils v0.0.38 // indirect
 	github.com/projectdiscovery/wappalyzergo v0.0.101 // indirect

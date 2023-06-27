@@ -19,6 +19,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"projectdiscovery_naabu": tableProjectdiscoveryNaabu(),
 			"projectdiscovery_chaos": tableProjectdiscoveryChaos(),
 			"projectdiscovery_httpx": tableProjectdiscoveryHttpx(),
+			"projectdiscovery_tlsx":  tableProjectdiscoveryTlsx(),
 		},
 	}
 	return p
