@@ -40,21 +40,31 @@ type naabuRow struct {
 
 func listScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 
+	logger := plugin.Logger(ctx)
+
 	host := d.EqualsQualString("target")
+	logger.Debug("target host", host)
 
 	// configure naabu
 	naabuOptions := runner.Options{
 		Host:     goflags.StringSlice{host},
 		ScanType: "c", // just assume we'll never run as root, so always connect-scan it
-		TopPorts: "1000",
 	}
 
+	// configure ports
+	config := GetConfig(d.Connection)
+	naabuOptions.TopPorts = *config.NaabuTopPorts
+	logger.Debug("top ports", *config.NaabuTopPorts)
+
+	// configure the callback to stream results
 	naabuOptions.OnResult = func(hr *result.HostResult) {
 		for _, port := range hr.Ports {
+			logger.Debug("naabu result", port)
 			d.StreamListItem(ctx, naabuRow{Target: host, Host: hr.Host, Ip: hr.IP, Port: port.Port})
 		}
 	}
 
+	// prepare and run the scan with our options
 	naabuRunner, err := runner.NewRunner(&naabuOptions)
 	if err != nil {
 		return nil, err
