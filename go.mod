@@ -3,6 +3,7 @@ module github.com/leonjza/steampipe-plugin-projectdiscovery
 go 1.19
 
 require (
+	github.com/projectdiscovery/chaos-client v0.5.1
 	github.com/projectdiscovery/goflags v0.1.10
 	github.com/projectdiscovery/naabu/v2 v2.1.6
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.5.0

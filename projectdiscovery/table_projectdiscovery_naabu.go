@@ -16,7 +16,7 @@ func tableProjectdiscoveryNaabu() *plugin.Table {
 		Name:        `projectdiscovery_naabu`,
 		Description: `Naabu is a fast port scanner written in Go. <https://github.com/projectdiscovery/naabu>`,
 		List: &plugin.ListConfig{
-			Hydrate: listScan,
+			Hydrate: listNaabuScan,
 			KeyColumns: plugin.KeyColumnSlice{
 				{Name: `target`, Require: plugin.Required},
 			},
@@ -38,7 +38,7 @@ type naabuRow struct {
 	Port   int    `json:"port"`
 }
 
-func listScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
+func listNaabuScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 
 	logger := plugin.Logger(ctx)
 

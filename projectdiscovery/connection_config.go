@@ -7,12 +7,12 @@ import (
 
 type projectdiscoveryConfig struct {
 	NaabuTopPorts *string `cty:"naabu_top_ports"`
+	ChaosAPIKey   *string `cty:"chaos_api_key"`
 }
 
 var ConfigSchema = map[string]*schema.Attribute{
-	"naabu_top_ports": {
-		Type: schema.TypeString,
-	},
+	"naabu_top_ports": {Type: schema.TypeString},
+	"chaos_api_key":   {Type: schema.TypeString},
 }
 
 func ConfigInstance() interface{} {
