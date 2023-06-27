@@ -11,7 +11,7 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
-func tableNaabu() *plugin.Table {
+func tableProjectdiscoveryNaabu() *plugin.Table {
 	return &plugin.Table{
 		Name:        `projectdiscovery_naabu`,
 		Description: `Naabu is a fast port scanner written in Go. <https://github.com/projectdiscovery/naabu>`,

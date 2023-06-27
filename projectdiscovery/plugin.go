@@ -16,7 +16,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			Schema:      ConfigSchema,
 		},
 		TableMap: map[string]*plugin.Table{
-			"projectdiscovery_naabu": tableNaabu(),
+			"projectdiscovery_naabu": tableProjectdiscoveryNaabu(),
 		},
 	}
 	return p
