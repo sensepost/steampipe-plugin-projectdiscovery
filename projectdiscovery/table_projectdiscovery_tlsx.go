@@ -14,7 +14,7 @@ import (
 func tableProjectdiscoveryTlsx() *plugin.Table {
 	return &plugin.Table{
 		Name:        `projectdiscovery_tlsx`,
-		Description: `Naabu is a fast port scanner written in Go. <https://github.com/projectdiscovery/naabu>`,
+		Description: `Fast and configurable TLS grabber. <https://github.com/projectdiscovery/tlsx>`,
 		List: &plugin.ListConfig{
 			Hydrate: listTlsxScan,
 			KeyColumns: plugin.KeyColumnSlice{

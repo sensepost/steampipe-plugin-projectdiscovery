@@ -20,6 +20,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"projectdiscovery_chaos": tableProjectdiscoveryChaos(),
 			"projectdiscovery_httpx": tableProjectdiscoveryHttpx(),
 			"projectdiscovery_tlsx":  tableProjectdiscoveryTlsx(),
+			"projectdiscovery_dnsx":  tableProjectdiscoveryDnsx(),
 		},
 	}
 	return p
