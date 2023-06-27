@@ -64,8 +64,6 @@ func listHttpxScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 			return
 		}
 
-		logger.Debug("result jarm", r.Jarm)
-
 		d.StreamListItem(ctx, r)
 	}
 

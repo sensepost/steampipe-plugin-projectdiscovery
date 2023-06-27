@@ -9,6 +9,7 @@ import (
 
 	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableProjectdiscoveryNaabu() *plugin.Table {
@@ -22,7 +23,7 @@ func tableProjectdiscoveryNaabu() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "target", Type: proto.ColumnType_STRING, Description: `Original target that was scanned`},
+			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `Original target that was scanned`},
 			{Name: "host", Type: proto.ColumnType_STRING, Description: `Resolved hostname of the target`},
 			{Name: "ip", Type: proto.ColumnType_IPADDR, Description: `Resolved IP address of the target`},
 			{Name: "port", Type: proto.ColumnType_INT, Description: `A port that is open`},
@@ -31,10 +32,9 @@ func tableProjectdiscoveryNaabu() *plugin.Table {
 }
 
 type naabuRow struct {
-	Target string `json:"target"`
-	Host   string `json:"host"`
-	Ip     string `json:"ip"`
-	Port   int    `json:"port"`
+	Host string `json:"host"`
+	Ip   string `json:"ip"`
+	Port int    `json:"port"`
 }
 
 func listNaabuScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -59,7 +59,7 @@ func listNaabuScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 	naabuOptions.OnResult = func(hr *result.HostResult) {
 		for _, port := range hr.Ports {
 			logger.Debug("naabu result", port)
-			d.StreamListItem(ctx, naabuRow{Target: host, Host: hr.Host, Ip: hr.IP, Port: port.Port})
+			d.StreamListItem(ctx, naabuRow{Host: hr.Host, Ip: hr.IP, Port: port.Port})
 		}
 	}
 

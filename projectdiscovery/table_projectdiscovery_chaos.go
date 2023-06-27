@@ -8,6 +8,7 @@ import (
 
 	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableProjectdiscoveryChaos() *plugin.Table {
@@ -21,14 +22,13 @@ func tableProjectdiscoveryChaos() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "domain", Type: proto.ColumnType_STRING, Description: `Domain under query`},
+			{Name: "domain", Type: proto.ColumnType_STRING, Transform: transform.FromQual("domain"), Description: `Domain under query`},
 			{Name: "subdomain", Type: proto.ColumnType_STRING, Description: `A subdomain`},
 		},
 	}
 }
 
 type chaosRow struct {
-	Domain    string `json:"domain"`
 	Subdomain string `json:"subomain"`
 }
 
@@ -48,7 +48,7 @@ func listChaos(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 			return nil, entry.Error
 		}
 
-		d.StreamListItem(ctx, chaosRow{Domain: domain, Subdomain: entry.Subdomain})
+		d.StreamListItem(ctx, chaosRow{Subdomain: entry.Subdomain})
 	}
 
 	return nil, nil
