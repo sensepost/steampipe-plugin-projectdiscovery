@@ -21,7 +21,6 @@ func tableProjectdiscoveryNaabu() *plugin.Table {
 				{Name: `target`, Require: plugin.Required},
 			},
 		},
-
 		Columns: []*plugin.Column{
 			{Name: "target", Type: proto.ColumnType_STRING, Description: `Original target that was scanned`},
 			{Name: "host", Type: proto.ColumnType_STRING, Description: `Resolved hostname of the target`},

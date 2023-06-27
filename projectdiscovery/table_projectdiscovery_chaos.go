@@ -20,7 +20,6 @@ func tableProjectdiscoveryChaos() *plugin.Table {
 				{Name: `domain`, Require: plugin.Required},
 			},
 		},
-
 		Columns: []*plugin.Column{
 			{Name: "domain", Type: proto.ColumnType_STRING, Description: `Domain under query`},
 			{Name: "subdomain", Type: proto.ColumnType_STRING, Description: `A subdomain`},
