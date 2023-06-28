@@ -29,6 +29,12 @@ func tableProjectdiscoverySubfinder() *plugin.Table {
 	}
 }
 
+type subfinderRow struct {
+	Domain string
+	Host   string
+	Source string
+}
+
 func listSubfinderScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 
 	logger := plugin.Logger(ctx)
@@ -48,7 +54,11 @@ func listSubfinderScan(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 
 	opts.ResultCallback = func(result *resolve.HostEntry) {
 		logger.Debug("got subfinder result", result)
-		d.StreamListItem(ctx, result)
+		d.StreamListItem(ctx, subfinderRow{
+			Domain: result.Domain,
+			Host:   result.Host,
+			Source: result.Source,
+		})
 	}
 
 	subfinder, err := runner.NewRunner(opts)
