@@ -15,6 +15,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			NewInstance: ConfigInstance,
 			Schema:      ConfigSchema,
 		},
+		// todo: uncover
 		TableMap: map[string]*plugin.Table{
 			"projectdiscovery_naabu":     tableProjectdiscoveryNaabu(),
 			"projectdiscovery_chaos":     tableProjectdiscoveryChaos(),
@@ -23,6 +24,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"projectdiscovery_dnsx":      tableProjectdiscoveryDnsx(),
 			"projectdiscovery_katana":    tableProjectdiscoveryKatana(),
 			"projectdiscovery_subfinder": tableProjectdiscoverySubfinder(),
+			"projectdiscovery_cloudlist": tableProjectdiscoveryCLoudlist(),
 		},
 	}
 	return p

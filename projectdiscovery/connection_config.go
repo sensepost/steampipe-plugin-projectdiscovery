@@ -6,13 +6,15 @@ import (
 )
 
 type projectdiscoveryConfig struct {
-	NaabuTopPorts *string `cty:"naabu_top_ports"`
-	ChaosAPIKey   *string `cty:"chaos_api_key"`
+	NaabuTopPorts    *string `cty:"naabu_top_ports"`
+	ChaosAPIKey      *string `cty:"chaos_api_key"`
+	CloudListDoToken *string `cty:"cloudlist_do_token"`
 }
 
 var ConfigSchema = map[string]*schema.Attribute{
-	"naabu_top_ports": {Type: schema.TypeString},
-	"chaos_api_key":   {Type: schema.TypeString},
+	"naabu_top_ports":    {Type: schema.TypeString},
+	"chaos_api_key":      {Type: schema.TypeString},
+	"cloudlist_do_token": {Type: schema.TypeString},
 }
 
 func ConfigInstance() interface{} {
