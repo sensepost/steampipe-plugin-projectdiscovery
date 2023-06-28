@@ -24,11 +24,11 @@ func tableProjectdiscoveryCLoudlist() *plugin.Table {
 		},
 		Columns: []*plugin.Column{
 			{Name: "provider", Type: proto.ColumnType_STRING, Transform: transform.FromQual("provider"), Description: `Target provider under query`},
-			{Name: "id", Type: proto.ColumnType_BOOL, Description: `The id name of the resource provider`},
+			{Name: "id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Id"), Description: `The id name of the resource provider`},
 			{Name: "public", Type: proto.ColumnType_BOOL, Description: `True if the resource is public`},
-			{Name: "public_ipv4", Type: proto.ColumnType_STRING, Description: `The public ipv4 address of the resource`},
-			{Name: "private_ipv4", Type: proto.ColumnType_STRING, Description: `The private ipv4 address of the resource`},
-			{Name: "dns_name", Type: proto.ColumnType_STRING, Description: `The DNS name of the resource`},
+			{Name: "public_ipv4", Type: proto.ColumnType_STRING, Transform: transform.FromField("PublicIpv4"), Description: `The public ipv4 address of the resource`},
+			{Name: "private_ipv4", Type: proto.ColumnType_STRING, Transform: transform.FromField("PrivateIpv4"), Description: `The private ipv4 address of the resource`},
+			{Name: "dns_name", Type: proto.ColumnType_STRING, Transform: transform.FromField("DnsName"), Description: `The DNS name of the resource`},
 		},
 	}
 }
@@ -65,6 +65,7 @@ func listCloudlistScan(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 			return nil, err
 		}
 		for _, resource := range resources.Items {
+			logger.Debug("found cloudlist resource", resource)
 			d.StreamListItem(ctx, cloudListScanRow{
 				Public:      resource.Public,
 				Provider:    resource.Provider,
