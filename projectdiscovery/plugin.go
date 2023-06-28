@@ -25,6 +25,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"projectdiscovery_katana":    tableProjectdiscoveryKatana(),
 			"projectdiscovery_subfinder": tableProjectdiscoverySubfinder(),
 			"projectdiscovery_cloudlist": tableProjectdiscoveryCLoudlist(),
+			"projectdiscovery_cdncheck":  tableProjectdiscoveryCdncheck(),
 		},
 	}
 	return p
