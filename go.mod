@@ -3,6 +3,8 @@ module github.com/leonjza/steampipe-plugin-projectdiscovery
 go 1.19
 
 require (
+	github.com/projectdiscovery/asnmap v1.0.4
+	github.com/projectdiscovery/cdncheck v1.0.9
 	github.com/projectdiscovery/chaos-client v0.5.1
 	github.com/projectdiscovery/cloudlist v1.0.3
 	github.com/projectdiscovery/dnsx v1.1.4
@@ -180,9 +182,7 @@ require (
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/power-devops/perfstat v0.0.0-20210106213030-5aafc221ea8c // indirect
-	github.com/projectdiscovery/asnmap v1.0.4 // indirect
 	github.com/projectdiscovery/blackrock v0.0.1 // indirect
-	github.com/projectdiscovery/cdncheck v1.0.9 // indirect
 	github.com/projectdiscovery/clistats v0.0.18 // indirect
 	github.com/projectdiscovery/dsl v0.0.10 // indirect
 	github.com/projectdiscovery/fastdialer v0.0.31 // indirect
