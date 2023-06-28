@@ -25,7 +25,7 @@ func tableProjectdiscoveryNaabu() *plugin.Table {
 		Columns: []*plugin.Column{
 			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `Original target that was scanned`},
 			{Name: "host", Type: proto.ColumnType_STRING, Description: `Resolved hostname of the target`},
-			{Name: "ip", Type: proto.ColumnType_IPADDR, Description: `Resolved IP address of the target`},
+			{Name: "ip", Type: proto.ColumnType_IPADDR, Transform: transform.FromField("Ip"), Description: `Resolved IP address of the target`},
 			{Name: "port", Type: proto.ColumnType_INT, Description: `A port that is open`},
 		},
 	}
