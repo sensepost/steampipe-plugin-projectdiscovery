@@ -17,16 +17,16 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 		},
 		// todo: uncover
 		TableMap: map[string]*plugin.Table{
-			"projectdiscovery_naabu":     tableProjectdiscoveryNaabu(),
-			"projectdiscovery_chaos":     tableProjectdiscoveryChaos(),
-			"projectdiscovery_httpx":     tableProjectdiscoveryHttpx(),
-			"projectdiscovery_tlsx":      tableProjectdiscoveryTlsx(),
-			"projectdiscovery_dnsx":      tableProjectdiscoveryDnsx(),
-			"projectdiscovery_katana":    tableProjectdiscoveryKatana(),
-			"projectdiscovery_subfinder": tableProjectdiscoverySubfinder(),
-			"projectdiscovery_cloudlist": tableProjectdiscoveryCLoudlist(),
-			"projectdiscovery_cdncheck":  tableProjectdiscoveryCdncheck(),
 			"projectdiscovery_asnmap":    tableProjectdiscoveryAsnmap(),
+			"projectdiscovery_cdncheck":  tableProjectdiscoveryCdncheck(),
+			"projectdiscovery_chaos":     tableProjectdiscoveryChaos(),
+			"projectdiscovery_cloudlist": tableProjectdiscoveryCLoudlist(),
+			"projectdiscovery_dnsx":      tableProjectdiscoveryDnsx(),
+			"projectdiscovery_httpx":     tableProjectdiscoveryHttpx(),
+			"projectdiscovery_katana":    tableProjectdiscoveryKatana(),
+			"projectdiscovery_naabu":     tableProjectdiscoveryNaabu(),
+			"projectdiscovery_subfinder": tableProjectdiscoverySubfinder(),
+			"projectdiscovery_tlsx":      tableProjectdiscoveryTlsx(),
 		},
 	}
 	return p
