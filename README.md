@@ -8,7 +8,7 @@ Use SQL to query Projectdiscovery.io tools for footprinting information
 
 ## Quick start
 
-Install the plugin with [Steampipe](https://steampipe.io):
+Install the plugin with [Steampipe](https://steampipe.io) (well, not yet, waiting to publish on the SteamPipe plugin hub. For now, use the instructions in the [developing](#developing) section below):
 
 ```shell
 steampipe plugin install sensepost/projectdiscovery
