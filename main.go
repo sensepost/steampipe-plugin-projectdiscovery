@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/leonjza/steampipe-plugin-projectdiscovery/projectdiscovery"
+	"github.com/sensepost/steampipe-plugin-projectdiscovery/projectdiscovery"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 

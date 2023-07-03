@@ -1,4 +1,4 @@
-module github.com/leonjza/steampipe-plugin-projectdiscovery
+module github.com/sensepost/steampipe-plugin-projectdiscovery
 
 go 1.19
 

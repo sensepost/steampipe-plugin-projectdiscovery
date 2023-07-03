@@ -28,3 +28,24 @@ from
 where
     target in ('104.16.132.229', '104.16.133.229')
 ```
+
+### Get CDN information for a domain (depends on the `net` plugin)
+
+```sql
+select
+    cdn,
+    cloud,
+    waf
+from
+    projectdiscovery_cdncheck
+where
+    target in (
+        select
+            rtrim(ip::text, '/32')
+        from
+            net_dns_record
+        where
+            domain = 'google.com'
+            and type = 'A' limit 1
+    )
+```

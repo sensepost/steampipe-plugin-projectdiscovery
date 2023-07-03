@@ -1,5 +1,7 @@
 # Projectdiscovery.io Plugin for Steampipe
 
+[![Twitter](https://img.shields.io/badge/twitter-%40leonjza-blue.svg)](https://twitter.com/leonjza)
+
 Use SQL to query Projectdiscovery.io tools for footprinting information
 
 - Documentation: [Table definitions & examples](/docs/tables/)
