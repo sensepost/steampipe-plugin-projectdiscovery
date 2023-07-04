@@ -1,10 +1,13 @@
 ---
 organization: Sensepost
 category: ["osint"]
+icon_url: "/images/plugins/sensepost/projectdiscovery.svg"
+brand_color: "#2684FF"
 display_name: "Project Discovery"
 short_name: "projectdiscovery"
 description: "Steampipe plugin for interacting with projectdiscovery.io toolsets."
 og_description: "Query ProjectDiscovery with SQL! Open source CLI. No DB required."
+og_image: "/images/plugins/sensepost/projectdiscovery-social-graphic.png"
 ---
 
 # Project Dicovery + Steampipe
