@@ -20,7 +20,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"projectdiscovery_asnmap":    tableProjectdiscoveryAsnmap(),
 			"projectdiscovery_cdncheck":  tableProjectdiscoveryCdncheck(),
 			"projectdiscovery_chaos":     tableProjectdiscoveryChaos(),
-			"projectdiscovery_cloudlist": tableProjectdiscoveryCLoudlist(),
+			"projectdiscovery_cloudlist": tableProjectdiscoveryCloudlist(),
 			"projectdiscovery_dnsx":      tableProjectdiscoveryDnsx(),
 			"projectdiscovery_httpx":     tableProjectdiscoveryHttpx(),
 			"projectdiscovery_katana":    tableProjectdiscoveryKatana(),

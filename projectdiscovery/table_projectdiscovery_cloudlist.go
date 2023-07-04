@@ -12,7 +12,7 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
-func tableProjectdiscoveryCLoudlist() *plugin.Table {
+func tableProjectdiscoveryCloudlist() *plugin.Table {
 	return &plugin.Table{
 		Name:        `projectdiscovery_cloudlist`,
 		Description: `Cloudlist is a tool for listing Assets from multiple Cloud Providers. <https://github.com/projectdiscovery/cloudlist>`,
