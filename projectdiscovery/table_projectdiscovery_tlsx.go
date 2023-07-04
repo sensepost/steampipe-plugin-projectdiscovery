@@ -35,7 +35,7 @@ func tableProjectdiscoveryTlsx() *plugin.Table {
 			{Name: "certificate_response", Type: proto.ColumnType_JSON, Description: `The leaf certificate presented by the server`},
 			{Name: "chain", Type: proto.ColumnType_JSON, Description: `The chain of certificates`},
 			{Name: "jarm_hash", Type: proto.ColumnType_STRING, Description: `The calculated jarm hash`},
-			{Name: "sni", Type: proto.ColumnType_STRING, Transform: transform.FromField("server_name"), Description: `Server Name Indicator`},
+			{Name: "sni", Type: proto.ColumnType_STRING, Transform: transform.FromField("ServerName"), Description: `Server Name Indicator`},
 		},
 	}
 }
