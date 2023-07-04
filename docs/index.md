@@ -90,4 +90,4 @@ connection "projectdiscovery" {
 ## Get involved
 
 - Open source: <https://github.com/sensepost/steampipe-plugin-projectdiscovery>
-- Community: [Slack Channel](https://steampipe.io/community/join)
+- Steampipe Community: [Slack Channel](https://steampipe.io/community/join)
