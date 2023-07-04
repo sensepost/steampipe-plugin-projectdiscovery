@@ -19,7 +19,7 @@ Run a query:
 ```sql
 with target as (
   select domain from (
-    values ('tesla.com')
+    values ('tesla.com'), ('reddit.com')
   ) t(domain)
 ), chaos as (
   select
