@@ -7,33 +7,33 @@
 ### Get ASN's for an organisation by name
 
 ```sql
-select
-    distinct asn 
+select distinct
+  asn
 from
-    projectdiscovery_asnmap
+  projectdiscovery_asnmap
 where
-    target = 'google'
+  target = 'google'
 ```
 
 ### Get first and last IP of an IP block
 
 ```sql
 select
-    first_ip,
-    last_ip
+  first_ip,
+  last_ip
 from
-    projectdiscovery_asnmap
+  projectdiscovery_asnmap
 where
-    target = '172.217.170.110'
+  target = '172.217.170.110'
 ```
 
 ### Get the organisation name that an ASN belongs to
 
 ```sql
-select
-    distinct org
+select distinct
+  org
 from
-    projectdiscovery_asnmap
+  projectdiscovery_asnmap
 where
-    target = '15169';
+  target = '15169'
 ```

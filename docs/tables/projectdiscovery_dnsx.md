@@ -8,9 +8,9 @@
 
 ```sql
 select
-    address
+  address
 from
-    projectdiscovery_dnsx
+  projectdiscovery_dnsx
 where
-    target = 'google.com';
+  target = 'google.com';
 ```

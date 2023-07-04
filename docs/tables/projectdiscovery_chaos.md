@@ -10,21 +10,21 @@
 
 ```sql
 select
-    subdomain
+  subdomain
 from
-    projectdiscovery_chaos
+  projectdiscovery_chaos
 where
-    domain = 'google.com'
+  domain = 'google.com'
 ```
 
 ### Get FQDN's for a domain, excluding wildcards
 
 ```sql
-select
-    distinct concat(subdomain, '.', domain)
+select distinct
+  concat(subdomain, '.', domain)
 from
-    projectdiscovery_chaos
+  projectdiscovery_chaos
 where
-    domain = 'google.com'
-    and subdomain not like '%*%'
+  domain = 'google.com'
+  and subdomain not like '%*%'
 ```

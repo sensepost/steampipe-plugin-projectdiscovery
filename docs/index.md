@@ -60,31 +60,32 @@ Installing the latest projectdiscovery plugin will create a config file (`~/.ste
 
 ```hcl
 connection "projectdiscovery" {
-  plugin = "projectdiscovery"
+  plugin = "sensepost/projectdiscovery"
 
-  // Naabu
+  # Naabu
 
-  // Top ports to scan for naabu.
-  //    Can be one of: full, 100, 1000
+  # Top ports to scan for naabu.
+  # Can be one of: full, 100, 1000
   naabu_top_ports = "100"
 
-  // Chaos
+  # Chaos
 
-  // Project chaos api key. Sign up for an API key at: https://chaos.projectdiscovery.io/
-  // chaos_api_key = "enpg9i8k4uxl0jtzoutym44cpm6rbxskr6fqoz11mxxpkiqtn4l7oju66rlqqz8j"
+  # Project chaos API key. Sign up for an API key at: https://chaos.projectdiscovery.io/
+  # chaos_api_key = "enpg9i8k4uxl0jtzoutym44cpm6rbxskr6fqoz11mxxpkiqtn4l7oju66rlqqz8j"
 
-  // Cloudlist
+  # Cloudlist
 
-  // Digital Ocean API key. Get an API key post authentication for a team by browsing to:
-  //    API (bottom left) -> Personal access tokens
-  // A read-only key would suffice
-  // cloudlist_do_token = "dop_v1_y0jzo0bp8wl7f3t0px74jea5hnxiicz1sl58z5mso6ep6a544v3mq1jp2qj4ed6a"
+  # Digital Ocean API key. Get an API key post authentication for a team by browsing to:
+  # API (bottom left) -> Personal access tokens
+  # A read-only key would suffice
+  # cloudlist_do_token = "dop_v1_y0jzo0bp8wl7f3t0px74jea5hnxiicz1sl58z5mso6ep6a544v3mq1jp2qj4ed6a"
 }
 ```
 
-- `api_key` - Free API key for authenticated access.
+- `chaos_api_key` - The API key to access the chaos dataset.
+- `cloudlist_do_token` - The Digital Ocean API key.
 
 ## Get involved
 
-- Open source: <https://github.com/kaggrwal/steampipe-plugin-bitfinex>
+- Open source: <https://github.com/sensepost/steampipe-plugin-projectdiscovery>
 - Community: [Slack Channel](https://steampipe.io/community/join)

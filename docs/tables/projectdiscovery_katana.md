@@ -10,22 +10,22 @@ Unfortunately, this table does not yet quite work as expected. The `depth` colum
 
 ```sql
 select
-    response
+  response
 from
-    projectdiscovery_katana
+  projectdiscovery_katana
 where
-    target = 'https://www.google.com/'
-    and depth = 1
+  target = 'https://www.google.com/'
+  and depth = 1
 ```
 
 ### Get response headers from a response
 
 ```sql
 select
-    jsonb_pretty(response -> 'headers')
+  jsonb_pretty(response -> 'headers')
 from
-    projectdiscovery_katana
+  projectdiscovery_katana
 where
-    target = 'https://www.google.com/'
-    and depth = 1
+  target = 'https://www.google.com/'
+  and depth = 1
 ```

@@ -10,23 +10,23 @@
 
 ```sql
 select
-    public_ipv4,
-    dns_name
+  public_ipv4,
+  dns_name
 from
-    projectdiscovery_cloudlist
+  projectdiscovery_cloudlist
 where
-    provider = 'do'
-    and public_ipv4 != ''
+  provider = 'do'
+  and public_ipv4 != ''
 ```
 
 ### Get private IPv4 adresses for assets in your Digital Ocean account
 
 ```sql
 select
-    private_ipv4
+  private_ipv4
 from
-    projectdiscovery_cloudlist
+  projectdiscovery_cloudlist
 where
-    provider = 'do'
-    and public = false
+  provider = 'do'
+  and public = false
 ```

@@ -8,9 +8,21 @@
 
 ```sql
 select
-    port
+  port
 from
-    projectdiscovery_naabu
+  projectdiscovery_naabu
 where
-    target = 'scanme.sh'
+  target = 'scanme.sh'
+```
+
+### Perform a top 1000 open ports scan of a network range
+
+```sql
+select
+  host,
+  port
+from
+  projectdiscovery_naabu
+where
+  target = '192.168.0.0/29'
 ```

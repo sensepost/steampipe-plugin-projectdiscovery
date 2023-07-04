@@ -8,42 +8,47 @@
 
 ```sql
 select
-    jarm_hash
+  jarm_hash
 from
-    projectdiscovery_tlsx
+  projectdiscovery_tlsx
 where
-    target = 'google.com'
+  target = 'google.com'
 ```
 
 ### Get Subject Alternate Names from a remote TLS certificate
 
 ```sql
 select
-    jsonb_array_elements_text(certificate_response -> 'subject_an')
+  jsonb_array_elements_text(certificate_response -> 'subject_an')
 from
-    projectdiscovery_tlsx
+  projectdiscovery_tlsx
 where
-    target = 'google.com'
+  target = 'google.com'
 ```
 
 ### Get serial numbers of certificates in a remote certificate chain
 
 ```sql
 select
-    jsonb_path_query(chain, '$.serial')
+  jsonb_path_query(chain, '$.serial')
 from
-    projectdiscovery_tlsx
+  projectdiscovery_tlsx
 where
-    target = 'google.com'
+  target = 'google.com'
 ```
 
 ### Check certificate expiryt for remote services
 
 ```sql
 select
-    jsonb_pretty(certificate_response -> 'not_after')::timestamp
+  jsonb_pretty(certificate_response -> 'not_after')::timestamp
 from
-    projectdiscovery_tlsx
+  projectdiscovery_tlsx
 where
-    target in ('google.com', 'twitter.com', 'facebook.com')
+  target in
+  (
+    'google.com',
+    'twitter.com',
+    'facebook.com'
+  )
 ```

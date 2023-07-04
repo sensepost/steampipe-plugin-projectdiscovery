@@ -8,31 +8,31 @@
 
 ```sql
 select
-    host
+  host
 from
-    projectdiscovery_subfinder
+  projectdiscovery_subfinder
 where
-    target = 'google.com'
+  target = 'google.com'
 ```
 
 ### Get the sources of information for subdomain info
 
 ```sql
-select
-    distinct source
+select distinct
+  source
 from
-    projectdiscovery_subfinder
+  projectdiscovery_subfinder
 where
-    target = 'google.com'
+  target = 'google.com'
 ```
 
 ### Count subdomains
 
 ```sql
 select
-    count(*)
+  count(*)
 from
-    projectdiscovery_subfinder
+  projectdiscovery_subfinder
 where
-    target = 'google.com'
+  target = 'google.com'
 ```
