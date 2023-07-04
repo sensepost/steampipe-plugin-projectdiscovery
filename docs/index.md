@@ -17,15 +17,14 @@ For example, to get ASN related information:
 
 ```sql
 select
-    asn,
-    country,
-    first_ip,
-    last_ip
+  asn,
+  country,
+  first_ip,
+  last_ip
 from
-    projectdiscovery_asnmap
+  projectdiscovery_asnmap
 where
-    target = 'google'
-limit 5;
+  target = 'google' limit 5
 ```
 
 ```text
