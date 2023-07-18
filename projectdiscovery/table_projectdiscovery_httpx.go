@@ -13,8 +13,8 @@ import (
 
 func tableProjectdiscoveryHttpx() *plugin.Table {
 	return &plugin.Table{
-		Name:        `projectdiscovery_httpx`,
-		Description: `httpx is a fast and multi-purpose HTTP toolkit. <https://github.com/projectdiscovery/httpx>`,
+		Name:        "projectdiscovery_httpx",
+		Description: "httpx is a fast and multi-purpose HTTP toolkit. <https://github.com/projectdiscovery/httpx>",
 		List: &plugin.ListConfig{
 			Hydrate: listHttpxScan,
 			KeyColumns: plugin.KeyColumnSlice{
@@ -22,23 +22,23 @@ func tableProjectdiscoveryHttpx() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `The target`},
-			{Name: "url", Type: proto.ColumnType_STRING, Description: `Target URL`},
-			{Name: "method", Type: proto.ColumnType_STRING, Description: `HTTP method`},
-			{Name: "host", Type: proto.ColumnType_IPADDR, Description: `Target host ip`},
-			{Name: "path", Type: proto.ColumnType_STRING, Description: `Target path`},
-			{Name: "port", Type: proto.ColumnType_INT, Description: `Target port`},
-			{Name: "title", Type: proto.ColumnType_STRING, Description: `HTML title tag value`},
-			{Name: "status_code", Type: proto.ColumnType_INT, Description: `HTTP response status code`},
-			{Name: "content_length", Type: proto.ColumnType_INT, Description: `HTTP response content length`},
-			{Name: "web_server", Type: proto.ColumnType_STRING, Description: `Remote webserver according to the Server header`},
-			{Name: "technologies", Type: proto.ColumnType_JSON, Description: `HTTP technologies in use`},
-			{Name: "response_time", Type: proto.ColumnType_STRING, Description: `HTTP response time`},
-			{Name: "a", Type: proto.ColumnType_JSON, Description: `Target A record(s)`},
-			{Name: "cname", Type: proto.ColumnType_STRING, Description: `Target CNAME record(s)`},
-			{Name: "hashes", Type: proto.ColumnType_JSON, Description: `HTTP response status code`},
-			{Name: "websocket", Type: proto.ColumnType_BOOL, Description: `True if the remote endpoint want to upgrade to a websocket`},
-			{Name: "failed", Type: proto.ColumnType_BOOL, Description: `True if the probe failed`},
+			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: "The target."},
+			{Name: "url", Type: proto.ColumnType_STRING, Description: "Target URL."},
+			{Name: "method", Type: proto.ColumnType_STRING, Description: "HTTP method."},
+			{Name: "host", Type: proto.ColumnType_IPADDR, Description: "Target host ip."},
+			{Name: "path", Type: proto.ColumnType_STRING, Description: "Target path."},
+			{Name: "port", Type: proto.ColumnType_INT, Description: "Target port."},
+			{Name: "title", Type: proto.ColumnType_STRING, Description: "HTML title tag value."},
+			{Name: "status_code", Type: proto.ColumnType_INT, Description: "HTTP response status code."},
+			{Name: "content_length", Type: proto.ColumnType_INT, Description: "HTTP response content length."},
+			{Name: "web_server", Type: proto.ColumnType_STRING, Description: "Remote webserver according to the Server header."},
+			{Name: "technologies", Type: proto.ColumnType_JSON, Description: "HTTP technologies in use."},
+			{Name: "response_time", Type: proto.ColumnType_STRING, Description: "HTTP response time."},
+			{Name: "a", Type: proto.ColumnType_JSON, Description: "Target A record(s)."},
+			{Name: "cname", Type: proto.ColumnType_STRING, Description: "Target CNAME record(s)."},
+			{Name: "hashes", Type: proto.ColumnType_JSON, Description: "HTTP response status code."},
+			{Name: "websocket", Type: proto.ColumnType_BOOL, Description: "True if the remote endpoint want to upgrade to a websocket."},
+			{Name: "failed", Type: proto.ColumnType_BOOL, Description: "True if the probe failed."},
 		},
 	}
 }

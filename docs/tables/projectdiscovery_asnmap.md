@@ -12,7 +12,7 @@ select distinct
 from
   projectdiscovery_asnmap
 where
-  target = 'google'
+  target = 'google';
 ```
 
 ### Get first and last IP of an IP block
@@ -24,7 +24,7 @@ select
 from
   projectdiscovery_asnmap
 where
-  target = '172.217.170.110'
+  target = '172.217.170.110';
 ```
 
 ### Get the organisation name that an ASN belongs to
@@ -35,5 +35,5 @@ select distinct
 from
   projectdiscovery_asnmap
 where
-  target = '15169'
+  target = '15169';
 ```

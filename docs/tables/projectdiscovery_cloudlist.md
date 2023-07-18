@@ -1,6 +1,6 @@
 # Table: projectdiscovery_cloudlist
 
-[cloudlist](https://github.com/projectdiscovery/cloudlist) Cloudlist is a tool for listing Assets from multiple Cloud Providers.
+[Cloudlist](https://github.com/projectdiscovery/cloudlist) is a tool for listing Assets from multiple Cloud Providers.
 
 **Note:** You need valid API credentials for supported cloud providers.
 
@@ -16,7 +16,7 @@ from
   projectdiscovery_cloudlist
 where
   provider = 'do'
-  and public_ipv4 != ''
+  and public_ipv4 != '';
 ```
 
 ### Get private IPv4 adresses for assets in your Digital Ocean account
@@ -28,5 +28,5 @@ from
   projectdiscovery_cloudlist
 where
   provider = 'do'
-  and public = false
+  and public = false;
 ```

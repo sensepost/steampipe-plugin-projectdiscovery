@@ -47,7 +47,7 @@ select count(*) from (
   union select
     domain from subfinder
   where domain not like '%*%'
-) domains
+) domains;
 ```
 
 ## Developing

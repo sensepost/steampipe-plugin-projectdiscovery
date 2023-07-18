@@ -12,7 +12,7 @@ select
 from
   projectdiscovery_tlsx
 where
-  target = 'google.com'
+  target = 'google.com';
 ```
 
 ### Get Subject Alternate Names from a remote TLS certificate
@@ -23,7 +23,7 @@ select
 from
   projectdiscovery_tlsx
 where
-  target = 'google.com'
+  target = 'google.com';
 ```
 
 ### Get serial numbers of certificates in a remote certificate chain
@@ -34,7 +34,7 @@ select
 from
   projectdiscovery_tlsx
 where
-  target = 'google.com'
+  target = 'google.com';
 ```
 
 ### Check certificate expiryt for remote services
@@ -50,5 +50,5 @@ where
     'google.com',
     'twitter.com',
     'facebook.com'
-  )
+  );
 ```
