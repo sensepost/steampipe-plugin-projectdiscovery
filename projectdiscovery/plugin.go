@@ -23,7 +23,6 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"projectdiscovery_cloudlist": tableProjectdiscoveryCloudlist(),
 			"projectdiscovery_dnsx":      tableProjectdiscoveryDnsx(),
 			"projectdiscovery_httpx":     tableProjectdiscoveryHttpx(),
-			"projectdiscovery_katana":    tableProjectdiscoveryKatana(),
 			"projectdiscovery_naabu":     tableProjectdiscoveryNaabu(),
 			"projectdiscovery_subfinder": tableProjectdiscoverySubfinder(),
 			"projectdiscovery_tlsx":      tableProjectdiscoveryTlsx(),

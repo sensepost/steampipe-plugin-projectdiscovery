@@ -10,7 +10,6 @@ require (
 	github.com/projectdiscovery/dnsx v1.1.4
 	github.com/projectdiscovery/goflags v0.1.10
 	github.com/projectdiscovery/httpx v1.3.3
-	github.com/projectdiscovery/katana v1.0.2
 	github.com/projectdiscovery/naabu/v2 v2.1.6
 	github.com/projectdiscovery/subfinder/v2 v2.6.0
 	github.com/projectdiscovery/tlsx v1.1.0
@@ -152,7 +151,6 @@ require (
 	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
 	github.com/lufia/plan9stats v0.0.0-20211012122336-39d0f177ccd0 // indirect
-	github.com/lukasbob/srcset v0.0.0-20190730101422-86b742e617f3 // indirect
 	github.com/mailru/easyjson v0.7.6 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
