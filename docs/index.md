@@ -2,7 +2,7 @@
 organization: Sensepost
 category: ["osint"]
 icon_url: "/images/plugins/sensepost/projectdiscovery.svg"
-brand_color: "#2684FF"
+brand_color: "#364EB0"
 display_name: "Project Discovery"
 short_name: "projectdiscovery"
 description: "Steampipe plugin for interacting with projectdiscovery.io toolsets."
@@ -27,7 +27,7 @@ select
 from
   projectdiscovery_asnmap
 where
-  target = 'google' limit 5
+  target = 'google' limit 5;
 ```
 
 ```text
@@ -46,13 +46,13 @@ where
 
 - **[Table definitions & examples →](/plugins/sensepost/projectdiscovery/docs/tables)**
 
-## Get Started
+## Quick start
 
 ### Install
 
 Download and install the latest Project Discovery plugin:
 
-```bash
+```sh
 steampipe plugin install sensepost/projectdiscovery
 ```
 
@@ -89,5 +89,5 @@ connection "projectdiscovery" {
 
 ## Get involved
 
-- Open source: <https://github.com/sensepost/steampipe-plugin-projectdiscovery>
+- Open source: https://github.com/sensepost/steampipe-plugin-projectdiscovery
 - Steampipe Community: [Slack Channel](https://steampipe.io/community/join)

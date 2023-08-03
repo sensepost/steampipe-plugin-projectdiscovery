@@ -12,8 +12,8 @@ import (
 
 func tableProjectdiscoveryAsnmap() *plugin.Table {
 	return &plugin.Table{
-		Name:        `projectdiscovery_asnmap`,
-		Description: `Library for quickly mapping organization network ranges using ASN information. <https://github.com/projectdiscovery/asnmap>`,
+		Name:        "projectdiscovery_asnmap",
+		Description: "Library for quickly mapping organization network ranges using ASN information. <https://github.com/projectdiscovery/asnmap>",
 		List: &plugin.ListConfig{
 			Hydrate: listAsnmap,
 			KeyColumns: plugin.KeyColumnSlice{
@@ -21,12 +21,12 @@ func tableProjectdiscoveryAsnmap() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `The ASN, IP or Org name to lookup`},
-			{Name: "asn", Type: proto.ColumnType_INT, Transform: transform.FromField("ASN"), Description: `The ASN`},
-			{Name: "country", Type: proto.ColumnType_STRING, Transform: transform.FromField("Country"), Description: `The country`},
-			{Name: "org", Type: proto.ColumnType_STRING, Transform: transform.FromField("Org"), Description: `The organisation`},
-			{Name: "first_ip", Type: proto.ColumnType_INET, Transform: transform.FromField("FirstIp"), Description: `First IP for the ASN`},
-			{Name: "last_ip", Type: proto.ColumnType_INET, Transform: transform.FromField("LastIp"), Description: `First IP for the ASN`},
+			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: "The ASN, IP or Org name to lookup."},
+			{Name: "asn", Type: proto.ColumnType_INT, Transform: transform.FromField("ASN"), Description: "The ASN."},
+			{Name: "country", Type: proto.ColumnType_STRING, Transform: transform.FromField("Country"), Description: "The country."},
+			{Name: "org", Type: proto.ColumnType_STRING, Transform: transform.FromField("Org"), Description: "The organisation."},
+			{Name: "first_ip", Type: proto.ColumnType_INET, Transform: transform.FromField("FirstIp"), Description: "First IP for the ASN."},
+			{Name: "last_ip", Type: proto.ColumnType_INET, Transform: transform.FromField("LastIp"), Description: "First IP for the ASN."},
 		},
 	}
 }
@@ -39,12 +39,13 @@ func listAsnmap(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 
 	client, err := asnmap.NewClient()
 	if err != nil {
+		logger.Error("projectdiscovery_asnmap.listAsnmap", "connection_error", err)
 		return nil, err
 	}
 
 	results, err := client.GetData(target)
 	if err != nil {
-		logger.Warn("asnmap failed to get data for domain", target)
+		logger.Error("projectdiscovery_asnmap.listAsnmap", "api_error", "asnmap failed to get data for domain", target, err)
 	}
 	logger.Debug("asnmap results", results)
 

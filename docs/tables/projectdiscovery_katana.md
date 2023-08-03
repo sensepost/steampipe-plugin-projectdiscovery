@@ -15,7 +15,7 @@ from
   projectdiscovery_katana
 where
   target = 'https://www.google.com/'
-  and depth = 1
+  and depth = 1;
 ```
 
 ### Get response headers from a response
@@ -27,5 +27,5 @@ from
   projectdiscovery_katana
 where
   target = 'https://www.google.com/'
-  and depth = 1
+  and depth = 1;
 ```

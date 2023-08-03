@@ -14,7 +14,7 @@ select
 from
   projectdiscovery_chaos
 where
-  domain = 'google.com'
+  domain = 'google.com';
 ```
 
 ### Get FQDN's for a domain, excluding wildcards
@@ -26,5 +26,5 @@ from
   projectdiscovery_chaos
 where
   domain = 'google.com'
-  and subdomain not like '%*%'
+  and subdomain not like '%*%';
 ```

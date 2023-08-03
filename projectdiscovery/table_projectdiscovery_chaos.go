@@ -13,8 +13,8 @@ import (
 
 func tableProjectdiscoveryChaos() *plugin.Table {
 	return &plugin.Table{
-		Name:        `projectdiscovery_chaos`,
-		Description: `Choas is an Internet-wide assets data project. <https://chaos.projectdiscovery.io/>`,
+		Name:        "projectdiscovery_chaos",
+		Description: "Choas is an Internet-wide assets data project. <https://chaos.projectdiscovery.io/>",
 		List: &plugin.ListConfig{
 			Hydrate: listChaos,
 			KeyColumns: plugin.KeyColumnSlice{
@@ -22,8 +22,8 @@ func tableProjectdiscoveryChaos() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "domain", Type: proto.ColumnType_STRING, Transform: transform.FromQual("domain"), Description: `Domain under query`},
-			{Name: "subdomain", Type: proto.ColumnType_STRING, Description: `A subdomain`},
+			{Name: "domain", Type: proto.ColumnType_STRING, Transform: transform.FromQual("domain"), Description: "Domain under query."},
+			{Name: "subdomain", Type: proto.ColumnType_STRING, Description: "A subdomain."},
 		},
 	}
 }
@@ -38,6 +38,7 @@ func listChaos(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 
 	config := GetConfig(d.Connection)
 	if *config.ChaosAPIKey == "" {
+		plugin.Logger(ctx).Error("projectdiscovery_chaos.listChaos", "connection_error")
 		return nil, errors.New("this table requires a configured chaos api key")
 	}
 
@@ -45,6 +46,7 @@ func listChaos(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 
 	for entry := range chaosClient.GetSubdomains(&chaos.SubdomainsRequest{Domain: domain}) {
 		if entry.Error != nil {
+			plugin.Logger(ctx).Error("projectdiscovery_chaos.listChaos", "api_eror", entry.Error)
 			return nil, entry.Error
 		}
 

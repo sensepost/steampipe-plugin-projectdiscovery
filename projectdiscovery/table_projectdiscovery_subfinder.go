@@ -13,8 +13,8 @@ import (
 
 func tableProjectdiscoverySubfinder() *plugin.Table {
 	return &plugin.Table{
-		Name:        `projectdiscovery_subfinder`,
-		Description: `Fast passive subdomain enumeration tool. <https://github.com/projectdiscovery/subfinder>`,
+		Name:        "projectdiscovery_subfinder",
+		Description: "Fast passive subdomain enumeration tool. <https://github.com/projectdiscovery/subfinder>",
 		List: &plugin.ListConfig{
 			Hydrate: listSubfinderScan,
 			KeyColumns: plugin.KeyColumnSlice{
@@ -22,9 +22,9 @@ func tableProjectdiscoverySubfinder() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `The target domain`},
-			{Name: "host", Type: proto.ColumnType_STRING, Description: `Host of the discovered domain`},
-			{Name: "source", Type: proto.ColumnType_STRING, Description: `The data source`},
+			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: "The target domain."},
+			{Name: "host", Type: proto.ColumnType_STRING, Description: "Host of the discovered domain."},
+			{Name: "source", Type: proto.ColumnType_STRING, Description: "The data source."},
 		},
 	}
 }
@@ -63,6 +63,7 @@ func listSubfinderScan(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 
 	subfinder, err := runner.NewRunner(opts)
 	if err != nil {
+		logger.Error("projectdiscovery_subfinder.listSubfinderScan", "new_runner_api_error", err)
 		return nil, err
 	}
 

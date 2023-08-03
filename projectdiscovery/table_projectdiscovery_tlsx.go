@@ -13,8 +13,8 @@ import (
 
 func tableProjectdiscoveryTlsx() *plugin.Table {
 	return &plugin.Table{
-		Name:        `projectdiscovery_tlsx`,
-		Description: `Fast and configurable TLS grabber. <https://github.com/projectdiscovery/tlsx>`,
+		Name:        "projectdiscovery_tlsx",
+		Description: "Fast and configurable TLS grabber. <https://github.com/projectdiscovery/tlsx>",
 		List: &plugin.ListConfig{
 			Hydrate: listTlsxScan,
 			KeyColumns: plugin.KeyColumnSlice{
@@ -23,19 +23,19 @@ func tableProjectdiscoveryTlsx() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `Original target that was scanned`},
-			{Name: "timestamp", Type: proto.ColumnType_TIMESTAMP, Description: `Time when the target was probed`},
-			{Name: "ip", Type: proto.ColumnType_IPADDR, Description: `The IP the request was made to`},
-			{Name: "port", Type: proto.ColumnType_STRING, Description: `The port the request was made to`},
-			{Name: "client", Type: proto.ColumnType_STRING, Transform: transform.FromField("TLSConnection"), Description: `The TLS client used`},
-			{Name: "success", Type: proto.ColumnType_BOOL, Transform: transform.FromField("ProbeStatus"), Description: `False if the probe failed`},
-			{Name: "error", Type: proto.ColumnType_STRING, Description: `The error that occured, if any`},
-			{Name: "version", Type: proto.ColumnType_STRING, Description: `The TLS version the server responded with`},
-			{Name: "cipher", Type: proto.ColumnType_STRING, Description: `The cipher used for the probe`},
-			{Name: "certificate_response", Type: proto.ColumnType_JSON, Description: `The leaf certificate presented by the server`},
-			{Name: "chain", Type: proto.ColumnType_JSON, Description: `The chain of certificates`},
-			{Name: "jarm_hash", Type: proto.ColumnType_STRING, Description: `The calculated jarm hash`},
-			{Name: "sni", Type: proto.ColumnType_STRING, Transform: transform.FromField("ServerName"), Description: `Server Name Indicator`},
+			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: "Original target that was scanned."},
+			{Name: "timestamp", Type: proto.ColumnType_TIMESTAMP, Description: "Time when the target was probed."},
+			{Name: "ip", Type: proto.ColumnType_IPADDR, Description: "The IP the request was made to."},
+			{Name: "port", Type: proto.ColumnType_STRING, Description: "The port the request was made to."},
+			{Name: "client", Type: proto.ColumnType_STRING, Transform: transform.FromField("TLSConnection"), Description: "The TLS client used."},
+			{Name: "success", Type: proto.ColumnType_BOOL, Transform: transform.FromField("ProbeStatus"), Description: "False if the probe failed."},
+			{Name: "error", Type: proto.ColumnType_STRING, Description: "The error that occured, if any."},
+			{Name: "version", Type: proto.ColumnType_STRING, Description: "The TLS version the server responded with."},
+			{Name: "cipher", Type: proto.ColumnType_STRING, Description: "The cipher used for the probe."},
+			{Name: "certificate_response", Type: proto.ColumnType_JSON, Description: "The leaf certificate presented by the server."},
+			{Name: "chain", Type: proto.ColumnType_JSON, Description: "The chain of certificates."},
+			{Name: "jarm_hash", Type: proto.ColumnType_STRING, Description: "The calculated jarm hash."},
+			{Name: "sni", Type: proto.ColumnType_STRING, Transform: transform.FromField("ServerName"), Description: "Server Name Indicator."},
 		},
 	}
 }

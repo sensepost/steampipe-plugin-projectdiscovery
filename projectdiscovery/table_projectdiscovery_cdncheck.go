@@ -14,8 +14,8 @@ import (
 
 func tableProjectdiscoveryCdncheck() *plugin.Table {
 	return &plugin.Table{
-		Name:        `projectdiscovery_cdncheck`,
-		Description: `A utility to detect various technology for a given IP address. <https://github.com/projectdiscovery/cdncheck>`,
+		Name:        "projectdiscovery_cdncheck",
+		Description: "A utility to detect various technology for a given IP address. <https://github.com/projectdiscovery/cdncheck>",
 		List: &plugin.ListConfig{
 			Hydrate: listCdnCheck,
 			KeyColumns: plugin.KeyColumnSlice{
@@ -23,10 +23,10 @@ func tableProjectdiscoveryCdncheck() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `Target IP to lookup`},
-			{Name: "cdn", Type: proto.ColumnType_STRING, Transform: transform.FromField("Cdn"), Description: `CDN information`},
-			{Name: "cloud", Type: proto.ColumnType_STRING, Transform: transform.FromField("Cloud"), Description: `Cloud information`},
-			{Name: "waf", Type: proto.ColumnType_STRING, Transform: transform.FromField("Waf"), Description: `WAF information`},
+			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: "Target IP to lookup."},
+			{Name: "cdn", Type: proto.ColumnType_STRING, Transform: transform.FromField("Cdn"), Description: "CDN information."},
+			{Name: "cloud", Type: proto.ColumnType_STRING, Transform: transform.FromField("Cloud"), Description: "Cloud information."},
+			{Name: "waf", Type: proto.ColumnType_STRING, Transform: transform.FromField("Waf"), Description: "WAF information."},
 		},
 	}
 }

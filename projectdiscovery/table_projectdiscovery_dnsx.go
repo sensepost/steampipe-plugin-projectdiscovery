@@ -12,8 +12,8 @@ import (
 
 func tableProjectdiscoveryDnsx() *plugin.Table {
 	return &plugin.Table{
-		Name:        `projectdiscovery_dnsx`,
-		Description: `dnsx is a fast and multi-purpose DNS toolkit . <https://github.com/projectdiscovery/dnsx>`,
+		Name:        "projectdiscovery_dnsx",
+		Description: "dnsx is a fast and multi-purpose DNS toolkit. <https://github.com/projectdiscovery/dnsx>",
 		List: &plugin.ListConfig{
 			Hydrate: listDnsxScan,
 			KeyColumns: plugin.KeyColumnSlice{
@@ -21,8 +21,8 @@ func tableProjectdiscoveryDnsx() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `Target to lookup`},
-			{Name: "address", Type: proto.ColumnType_STRING, Description: `DNS A record response`},
+			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: "Target to lookup."},
+			{Name: "address", Type: proto.ColumnType_STRING, Description: "DNS A record response."},
 		},
 	}
 }
@@ -41,6 +41,7 @@ func listDnsxScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 	// Create DNS Resolver with default options
 	dnsClient, err := dnsx.New(dnsx.DefaultOptions)
 	if err != nil {
+		logger.Error("projectdiscovery_dnsx.listDnsxScan", "connection_error", err)
 		return nil, err
 	}
 

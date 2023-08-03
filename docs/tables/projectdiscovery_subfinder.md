@@ -12,7 +12,7 @@ select
 from
   projectdiscovery_subfinder
 where
-  target = 'google.com'
+  target = 'google.com';
 ```
 
 ### Get the sources of information for subdomain info
@@ -23,7 +23,7 @@ select distinct
 from
   projectdiscovery_subfinder
 where
-  target = 'google.com'
+  target = 'google.com';
 ```
 
 ### Count subdomains
@@ -34,5 +34,5 @@ select
 from
   projectdiscovery_subfinder
 where
-  target = 'google.com'
+  target = 'google.com';
 ```

@@ -14,8 +14,8 @@ import (
 
 func tableProjectdiscoveryKatana() *plugin.Table {
 	return &plugin.Table{
-		Name:        `projectdiscovery_katana`,
-		Description: `(incomplete) A next-generation crawling and spidering framework. <https://github.com/projectdiscovery/katana>`,
+		Name:        "projectdiscovery_katana",
+		Description: "A next-generation crawling and spidering framework. <https://github.com/projectdiscovery/katana>",
 		List: &plugin.ListConfig{
 			Hydrate: listKatanaScan,
 			KeyColumns: plugin.KeyColumnSlice{
@@ -24,11 +24,11 @@ func tableProjectdiscoveryKatana() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `Target to lookup`},
-			{Name: "depth", Type: proto.ColumnType_INT, Transform: transform.FromQual("depth"), Description: `Depth to scan`},
-			{Name: "request", Type: proto.ColumnType_JSON, Description: `The HTTP request`},
-			{Name: "response", Type: proto.ColumnType_JSON, Description: `The HTTP response`},
-			{Name: "error", Type: proto.ColumnType_STRING, Description: `An error, if any`},
+			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: "Target to lookup."},
+			{Name: "depth", Type: proto.ColumnType_INT, Transform: transform.FromQual("depth"), Description: "Depth to scan."},
+			{Name: "request", Type: proto.ColumnType_JSON, Description: "The HTTP request."},
+			{Name: "response", Type: proto.ColumnType_JSON, Description: "The HTTP response."},
+			{Name: "error", Type: proto.ColumnType_STRING, Description: "An error, if any."},
 		},
 	}
 }
@@ -62,12 +62,14 @@ func listKatanaScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 
 	crawlerOptions, err := types.NewCrawlerOptions(options)
 	if err != nil {
+		logger.Error("projectdiscovery_katana.listKatanaScan", "new_crawler_options_api_err", err)
 		return nil, err
 	}
 	defer crawlerOptions.Close()
 
 	crawler, err := standard.New(crawlerOptions)
 	if err != nil {
+		logger.Error("projectdiscovery_katana.listKatanaScan", "new_crawler_instance_api_err", err)
 		return nil, err
 	}
 	defer crawler.Close()

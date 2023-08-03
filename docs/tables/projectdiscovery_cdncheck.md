@@ -14,7 +14,7 @@ select
 from
   projectdiscovery_cdncheck
 where
-  target = '172.217.170.14'
+  target = '172.217.170.14';
 ```
 
 ### Get CDN, Cloud Provider and WAF information for multiple IP's
@@ -30,7 +30,7 @@ where
   (
     '104.16.132.229',
     '104.16.133.229'
-  )
+  );
 ```
 
 ### Get CDN information for a domain (depends on the `net` plugin)
@@ -52,5 +52,5 @@ where
     where
       domain = 'google.com'
       and type = 'A' limit 1
-  )
+  );
 ```

@@ -14,8 +14,8 @@ import (
 
 func tableProjectdiscoveryNaabu() *plugin.Table {
 	return &plugin.Table{
-		Name:        `projectdiscovery_naabu`,
-		Description: `Naabu is a fast port scanner written in Go. <https://github.com/projectdiscovery/naabu>`,
+		Name:        "projectdiscovery_naabu",
+		Description: "Naabu is a fast port scanner written in Go. <https://github.com/projectdiscovery/naabu>",
 		List: &plugin.ListConfig{
 			Hydrate: listNaabuScan,
 			KeyColumns: plugin.KeyColumnSlice{
@@ -23,10 +23,10 @@ func tableProjectdiscoveryNaabu() *plugin.Table {
 			},
 		},
 		Columns: []*plugin.Column{
-			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: `Original target that was scanned`},
-			{Name: "host", Type: proto.ColumnType_STRING, Description: `Resolved hostname of the target`},
-			{Name: "ip", Type: proto.ColumnType_IPADDR, Transform: transform.FromField("Ip"), Description: `Resolved IP address of the target`},
-			{Name: "port", Type: proto.ColumnType_INT, Description: `A port that is open`},
+			{Name: "target", Type: proto.ColumnType_STRING, Transform: transform.FromQual("target"), Description: "Original target that was scanned."},
+			{Name: "host", Type: proto.ColumnType_STRING, Description: "Resolved hostname of the target."},
+			{Name: "ip", Type: proto.ColumnType_IPADDR, Transform: transform.FromField("Ip"), Description: "Resolved IP address of the target."},
+			{Name: "port", Type: proto.ColumnType_INT, Description: "A port that is open."},
 		},
 	}
 }
@@ -66,6 +66,7 @@ func listNaabuScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 	// prepare and run the scan with our options
 	naabuRunner, err := runner.NewRunner(&naabuOptions)
 	if err != nil {
+		logger.Error("projectdiscovery_naabu.listNaabuScan", "new_runner_api_error", err)
 		return nil, err
 	}
 	defer naabuRunner.Close()

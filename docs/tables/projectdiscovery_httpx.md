@@ -1,6 +1,6 @@
 # Table: projectdiscovery_httpx
 
-[httpx](https://github.com/projectdiscovery/httpx) httpx is a fast and multi-purpose HTTP toolkit that allows running multiple probes using the retryablehttp library.
+[httpx](https://github.com/projectdiscovery/httpx) is a fast and multi-purpose HTTP toolkit that allows running multiple probes using the retryablehttp library.
 
 ## Examples
 
@@ -17,7 +17,7 @@ where
   (
     'https://www.google.com/',
     'https://twitter.com/'
-  )
+  );
 ```
 
 ### Get webserver technologes in used as per Wapalyzer
@@ -33,7 +33,7 @@ where
     'https://www.google.com/',
     'https://twitter.com/',
     'https://facebook.com'
-  )
+  );
 ```
 
 ### Get a SHA1 hash of the response headers
@@ -44,7 +44,7 @@ select
 from
   projectdiscovery_httpx
 where
-  target = 'https://www.google.com/'
+  target = 'https://www.google.com/';
 ```
 
 ### Get HTTP requests to a set of targets as well as the IP's they resolve to
@@ -88,5 +88,5 @@ union
 select
   *
 from
-  ips
+  ips;
 ```
