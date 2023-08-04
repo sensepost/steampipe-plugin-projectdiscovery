@@ -18,7 +18,7 @@ func tableProjectdiscoveryChaos() *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listChaos,
 			KeyColumns: plugin.KeyColumnSlice{
-				{Name: `domain`, Require: plugin.Required},
+				{Name: "domain", Require: plugin.Required},
 			},
 		},
 		Columns: []*plugin.Column{
