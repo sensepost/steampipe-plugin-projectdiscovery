@@ -30,7 +30,7 @@ where
   target = 'google' limit 5;
 ```
 
-```text
+```
 +-------+---------+--------------+----------------+
 | asn   | country | first_ip     | last_ip        |
 +-------+---------+--------------+----------------+
@@ -44,7 +44,7 @@ where
 
 ## Documentation
 
-- **[Table definitions & examples →](/plugins/sensepost/projectdiscovery/docs/tables)**
+- **[Table definitions & examples →](/plugins/sensepost/projectdiscovery/tables)**
 
 ## Quick start
 
@@ -90,4 +90,5 @@ connection "projectdiscovery" {
 ## Get involved
 
 - Open source: https://github.com/sensepost/steampipe-plugin-projectdiscovery
-- Steampipe Community: [Slack Channel](https://steampipe.io/community/join)
+- Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
+

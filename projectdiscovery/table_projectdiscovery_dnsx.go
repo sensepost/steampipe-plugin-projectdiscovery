@@ -17,7 +17,7 @@ func tableProjectdiscoveryDnsx() *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listDnsxScan,
 			KeyColumns: plugin.KeyColumnSlice{
-				{Name: `target`, Require: plugin.Required},
+				{Name: "target", Require: plugin.Required},
 			},
 		},
 		Columns: []*plugin.Column{

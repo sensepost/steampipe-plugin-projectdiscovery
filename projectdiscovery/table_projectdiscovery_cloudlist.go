@@ -19,7 +19,7 @@ func tableProjectdiscoveryCloudlist() *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listCloudlistScan,
 			KeyColumns: plugin.KeyColumnSlice{
-				{Name: `provider`, Require: plugin.Required},
+				{Name: "provider", Require: plugin.Required},
 			},
 		},
 		Columns: []*plugin.Column{

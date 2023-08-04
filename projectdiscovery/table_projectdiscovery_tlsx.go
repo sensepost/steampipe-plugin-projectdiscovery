@@ -18,7 +18,7 @@ func tableProjectdiscoveryTlsx() *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listTlsxScan,
 			KeyColumns: plugin.KeyColumnSlice{
-				{Name: `target`, Require: plugin.Required},
+				{Name: "target", Require: plugin.Required},
 				{Name: `port`, Require: plugin.Optional},
 			},
 		},

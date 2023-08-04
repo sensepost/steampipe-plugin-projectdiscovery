@@ -17,7 +17,7 @@ func tableProjectdiscoveryAsnmap() *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listAsnmap,
 			KeyColumns: plugin.KeyColumnSlice{
-				{Name: `target`, Require: plugin.Required},
+				{Name: "target", Require: plugin.Required},
 			},
 		},
 		Columns: []*plugin.Column{
