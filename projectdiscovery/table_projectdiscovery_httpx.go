@@ -55,7 +55,7 @@ func listHttpxScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 		InputTargetHost: goflags.StringSlice{host},
 		ExtractTitle:    true,
 		Hashes:          "sha1",
-		TechDetect:      true,
+		TechDetect:      "true",
 	}
 
 	options.OnResult = func(r runner.Result) {

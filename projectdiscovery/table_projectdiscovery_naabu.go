@@ -70,7 +70,7 @@ func listNaabuScan(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 		return nil, err
 	}
 	defer naabuRunner.Close()
-	naabuRunner.RunEnumeration()
+	naabuRunner.RunEnumeration(ctx)
 
 	return nil, nil
 }
